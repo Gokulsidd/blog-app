@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block content %} 
+
+{% if user.is_authenticated %}
+<button class="create-blog-btn">
+  <a href="{% url 'post_new' %}">Create Blog</a>
+</button>
+{% for post in blog_list %}
+<div class="post-entry">
+  <h2><a href="{% url 'post_detail' post.pk %}">{{post.title}}</a></h2>
+  <p>{{post.body}}</p>
+</div>
+{% endfor %} 
+{% endif %}
+
+{% endblock content %}

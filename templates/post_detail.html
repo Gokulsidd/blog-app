@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="post-entry">
+    <h2>{{object.title}}</h2>
+    <p class='created-at'>{{ object.created_at }}</p>
+    <p>{{object.body}}</p>
+</div>
+<button class='update-btns'><a href=" {% url 'post_update' post.pk %} ">Update Blog</a></button>
+<button class='update-btns'><a href=" {% url 'post_delete' post.pk %} ">Delete Blog</a></button>
+<button class='update-btns'> <a href=" {% url 'home' %} ">Done</a></button>
+{% endblock content %}
+
